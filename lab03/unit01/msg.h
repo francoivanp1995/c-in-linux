@@ -1,6 +1,6 @@
 #ifndef MSG_H
 #define MSG_H
 
-void print_msg(char *mensaje);
+void print_msg(char *msg);
 
 #endif /* MENSAJE_H */
