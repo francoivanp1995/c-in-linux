@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -pedantic-errors
+CFLAGS = -Wall -pedantic-errors -std=gnu89
 
 all: prog
 
