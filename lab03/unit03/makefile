@@ -6,7 +6,7 @@ all: programa
 programa: functions.o main.o archivos.o
 	$(CC) $(CFLAGS) -o programa functions.o main.o archivos.o
 
-functions.o: functions.c functions.h global.c global.h
+functions.o: functions.c functions.h
 	$(CC) $(CFLAGS) -c functions.c
 
 main.o: main.c functions.h archivos.h
@@ -19,4 +19,4 @@ archivos.o: archivos.c archivos.h
 	$(CC) $(CFLAGS) -c archivos.c
 
 clean:
-	rm -rf *.o programa
+	rm -rf *o programa

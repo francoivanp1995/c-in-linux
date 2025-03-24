@@ -1,9 +1,9 @@
 #ifndef ARCHIVOS_H
 #define ARCHIVOS_H
 
-int openFile();
-int readFile();
-int writeFile();
-int closeFile();
+int openFile(char *fileName, char *type);
+int readFile(char *fileName);
+int writeFile(char *fileName);
+void closeFile();
 
 #endif /* _ARCHIVOS_ */

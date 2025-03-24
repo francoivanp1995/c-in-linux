@@ -1,6 +1,5 @@
 #include "archivos.h"
 #include <stdio.h>
-#include "global.h"
 
 int openFile(char *fileName, char *type)
 {
@@ -20,7 +19,7 @@ int readFile(char *fileName)
     char cadena[100];
     FILE *fileNamePointer = fopen(fileName,"r");
     if (fileNamePointer == NULL) {
-        printf("Error while opening the file %s\n", fileName);
+        printf("Error while opening the file. Please check if the file exists before reading it. %s\n", fileName);
         return 0;
     }
     while (fscanf(fileNamePointer, "%s", cadena) != EOF) {
@@ -31,7 +30,31 @@ int readFile(char *fileName)
     return 1;
 }
 
-int writeFile();
+int writeFile(char *fileName)
+{
+    int limite = 10;
+    int iterator;
+    FILE *fileNamePointer = fopen(fileName,"w");
+    if (fileNamePointer == NULL) {
+        printf("Error while opening the file %s\n", fileName);
+        return 0;
+    }
+    printf("Ingrese los nombres de diez productos\n");
+    for (iterator = 1; iterator <= limite ; iterator++)
+    {
+        char producto[50];
+        printf("Ingrese el nombre del producto: ");
+        scanf("%s",producto);
+        fprintf(fileNamePointer, "%s-%02d\n", producto, iterator);
+    }
+    fclose(fileNamePointer);
+    printf("El archivo ha sido creado.");
+    return 0;
 
-int closeFile();
+}
 
+void closeFile(FILE *filePointer) {
+    if (filePointer != NULL) {
+        fclose(filePointer);
+    }
+}

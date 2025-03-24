@@ -7,6 +7,5 @@ int main(int argc, char *argv[])
 	checkArgVec(argc,argv);
 	file(argv);
 
-
 	return 0;
 }
