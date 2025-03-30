@@ -4,6 +4,7 @@
 int main(int argc, char *argv[])
 {
 
-    create_key();
+    key_t clave = create_key();
+    printf("key is %d\n",clave);
     return 0;
 }
