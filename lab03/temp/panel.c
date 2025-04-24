@@ -7,7 +7,6 @@
 
 int main(int argc, char *argv[])
 {
-	Pedido pedido;
 	FILE *archivo; 
 	char buffer[LARGO];
 	char tipo_menu_filtro = argv[1][0];
@@ -33,7 +32,6 @@ int main(int argc, char *argv[])
 		inAbrirArchivo(&archivo,"menues.txt", "r");
 		if (archivo!=NULL)
 		{
-			fp_read = archivo;
 			menues_total = 0;
 			total_facturado = 0;
 			printf("\nCONSUMIMOS\n");
@@ -41,24 +39,6 @@ int main(int argc, char *argv[])
 			{
 				if (pedido.tipoMenu == tipo_menu_filtro)
 				{
-					if (tipo_menu_filtro == 'A')
-					{
-						tipoMenu[0]++;
-						facturado_por_menu[0] += pedido.precio;
-					} else if (tipo_menu_filtro == 'B')
-					{
-						tipoMenu[1]++;
-						facturado_por_menu[1] += pedido.precio;
-					}
-					else
-					{
-						tipoMenu[2]++;
-						facturado_por_menu[2] += pedido.precio;
-					}					
-					menues_total++;
-                    total_facturado += pedido.precio;
-                    printf("→ Menu: %c | Postre: %d | Sistema: %c | Precio: %d\n",
-                        pedido.tipoMenu, pedido.con_postre, pedido.sistema, pedido.precio);
 				}
 				usleep(10000);
 			}
