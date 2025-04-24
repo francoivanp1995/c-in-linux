@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "key.h"
+#include <sys/ipc.h>
 
 int main(int argc, char *argv[])
 {
