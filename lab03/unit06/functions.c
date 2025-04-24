@@ -55,3 +55,12 @@ void mostrar_pedido(Pedido p)
     printf("\nSistema: %c", p.sistema);
     printf("\nCon Postre: %d", p.con_postre);
 }
+
+
+void check_argv( const char tipo_menu_filtro)
+{
+    if (tipo_menu_filtro != 'A' && tipo_menu_filtro != 'B' && tipo_menu_filtro != 'C') {
+        printf("Tipo de menú inválido. Debe ser A, B o C.\n");
+        exit(1);
+    }
+}

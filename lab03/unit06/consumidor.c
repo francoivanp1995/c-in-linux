@@ -25,10 +25,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    if (tipo_menu_filtro != 'A' && tipo_menu_filtro != 'B' && tipo_menu_filtro != 'C') {
-        printf("Tipo de menú inválido. Debe ser A, B o C.\n");
-        exit(1);
-    }
+	check_argv(tipo_menu_filtro);
 
 	while(1)
 	{
@@ -44,11 +41,11 @@ int main(int argc, char *argv[])
 			{
 				if (pedido.tipoMenu == tipo_menu_filtro)
 				{
-					if (pedido.tipoMenu == 'A')
+					if (tipo_menu_filtro == 'A')
 					{
 						tipoMenu[0]++;
 						facturado_por_menu[0] += pedido.precio;
-					} else if (pedido.tipoMenu == 'B')
+					} else if (tipo_menu_filtro == 'B')
 					{
 						tipoMenu[1]++;
 						facturado_por_menu[1] += pedido.precio;
@@ -63,7 +60,7 @@ int main(int argc, char *argv[])
                     printf("→ Menu: %c | Postre: %d | Sistema: %c | Precio: %d\n",
                         pedido.tipoMenu, pedido.con_postre, pedido.sistema, pedido.precio);
 				}
-				usleep(1000);
+				usleep(10000);
 			}
 		inCerrarArchivo(&archivo);
 		}
